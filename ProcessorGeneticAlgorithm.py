@@ -124,23 +124,6 @@ def GetNextGeneration(currentGeneration: List[SimulationResult]):
 
 
 def CpuArchitectureGeneticAlgorithm(cores: List[Core], numberOfCores: int, consumptionLimit: float, generationLimit: int, numberOfGenomes: int):
-    # lenOfSystem = numberOfCores * len(cores)
-    # listOfCPUs = set()
-    
-    # Here we generate an initial population.
-    # while len(listOfCPUs) < 16:
-    #     currentCPU = [0 for _ in range(len(cores))] # List to track the number of each core for the current cpu.
-    #     coresCounter = 0
-    #     '''
-    #     Uniformly generate random indexes to select what kind of core is going to be selected for each cell.
-    #     The selected index is set to true, and we repeat the process until we get the desired amount of cores selected.
-    #     '''
-    #     while coresCounter < numberOfCores:
-    #         currentSelection = int(uniform(0, 1) * len(cores))
-    #         currentCPU[currentSelection] += 1
-    #         coresCounter += 1
-        
-    #     listOfCPUs.add(tuple(currentCPU))
 
     currentGeneration: Set[Tuple[int,...]] = GetInitialPopulation(numberOfCores, len(cores), numberOfGenomes)
 
